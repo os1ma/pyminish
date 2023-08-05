@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
-while True:
-  line = input("> ")
-  print(line)
+
+def main():
+    while True:
+        line = input("> ")
+        print(line)
+
+
+if __name__ == "__main__":
+    main()
