@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+
+while True:
+  line = input("> ")
+  print(line)
