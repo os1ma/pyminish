@@ -45,6 +45,7 @@ def main():
 
             if command_path is None:
                 print(f"{command}: command not found", file=sys.stderr)
+                continue
 
             pid = os.fork()
 
