@@ -1,10 +1,32 @@
 #!/usr/bin/env python
 
 
+def builtin_echo(args):
+    print(" ".join(args))
+
+
+def builtin_exit(args):
+    exit()
+
+
+BUILTIN_COMMAND_FUNC_MAPPING = {
+    "echo": builtin_echo,
+    "exit": builtin_exit,
+}
+
+
 def main():
     while True:
         line = input("> ")
-        print(line)
+        tokens = line.split()
+        command = tokens[0]
+        args = tokens[1:]
+
+        if command in BUILTIN_COMMAND_FUNC_MAPPING:
+            func = BUILTIN_COMMAND_FUNC_MAPPING[command]
+            func(args)
+        else:
+            print(f"{command}: command not found")
 
 
 if __name__ == "__main__":
