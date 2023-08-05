@@ -1,0 +1,6 @@
+services:
+  python:
+    image: python:3.11.4-alpine3.17
+    command: sleep infinity
+    volumes:
+    - ./pyminish:/usr/local/bin/pyminish
