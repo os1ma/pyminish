@@ -19,6 +19,11 @@ BUILTIN_COMMAND_FUNC_MAPPING = {
 
 
 def find_command(command):
+    if "/" in command:
+        if os.path.exists(command) and not os.path.isdir(command):
+            return command
+        return None
+
     for path in os.environ["PATH"].split(":"):
         path = os.path.join(path, command)
         if os.path.exists(path) and not os.path.isdir(path):
