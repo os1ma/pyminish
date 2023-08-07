@@ -57,7 +57,8 @@ def main():
             if pid < 0:
                 print("fork failed", file=sys.stderr)
             elif pid == 0:
-                os.execve(command_path, [command_path] + args, os.environ)
+                command_basename = os.path.basename(command_path)
+                os.execve(command_path, [command_basename] + args, os.environ)
             else:
                 os.waitpid(pid, 0)
 
