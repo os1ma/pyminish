@@ -20,7 +20,7 @@ BUILTIN_COMMAND_FUNC_MAPPING = {
 
 def find_command(command):
     if "/" in command:
-        if os.path.exists(command) and not os.path.isdir(command):
+        if os.path.exists(command):
             return command
         return None
 
